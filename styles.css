@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    background-color: #f0e6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.cuento-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.cuento-imagen {
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
