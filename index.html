@@ -1,14 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuento de Alesita</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alesita - Nuestro Cuento</title>
+  <style>
+    /* Reset y estilo base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; color: #003366; }
+    section { position: relative; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    /* Parallax backgrounds */
+    .parallax { background-attachment: fixed; background-size: cover; background-position: center; }
+    /* Títulos y texto */
+    .title { font-size: 3rem; margin-bottom: 1rem; }
+    .text { font-size: 1.2rem; max-width: 600px; background: rgba(255,255,255,0.8); padding: 1rem; border-radius: 10px; }
+    /* Carta final */
+    .letter { background: white; padding: 2rem; border-radius: 20px; max-width: 500px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .signature { margin-top: 1rem; font-style: italic; }
+    /* Botón inicio */
+    .intro-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #a2c4f4; }
+    .intro-screen button { margin-top: 1rem; padding: 1rem 2rem; font-size: 1rem; background: #003366; color: white; border: none; border-radius: 10px; cursor: pointer; }
+  </style>
 </head>
 <body>
-    <div class="cuento-container">
-        <img src="alesita_cuento.png" alt="Cuento de Alesita" class="cuento-imagen">
-    </div>
+
+  <!-- Pantalla inicial -->
+  <div id="intro" class="intro-screen">
+    <h1 class="title">Érase una vez...</h1>
+    <p class="text">En un mundo donde los hilos cosen sueños y el amor escribe cuentos...</p>
+    <button onclick="startStory()">Comenzar el cuento</button>
+  </div>
+
+  <!-- Contenido del cuento -->
+  <div id="story" style="display:none;">
+
+    <section class="parallax" style="background-image:url('img/alesita-inicio.png');">
+      <div>
+        <h2 class="title">Alesita</h2>
+        <p class="text">Había una vez una princesa que iluminaba el mundo con su dulzura...</p>
+      </div>
+    </section>
+
+    <section class="parallax" style="background-image:url('img/alesita-ratoncitos.png');">
+      <div>
+        <p class="text">Con la ayuda de Gus Gus y Jack, tejía sueños de amor y esperanza.</p>
+      </div>
+    </section>
+
+    <section class="parallax" style="background-image:url('img/alesita-cosiendo.png');">
+      <div>
+        <p class="text">Cada hilo, cada mirada, cada instante... era pura magia.</p>
+      </div>
+    </section>
+
+    <section class="parallax" style="background-image:url('img/alesita-hija.png');">
+      <div>
+        <p class="text">Y entonces llegó nuestra pequeña princesa, trayendo aún más luz a la historia.</p>
+      </div>
+    </section>
+
+    <section class="parallax" style="background-image:url('img/alesita-celebracion.png');">
+      <div>
+        <p class="text">En este gran día celebramos a la reina costurera de nuestro cuento.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">
+        <p>No hay palabras suficientes para agradecer todo lo que eres.<br>
+        Cada hilo que coses, cada mirada que das, cada muestra de afecto, cada momento que compartimos… todo eso es magia.<br>
+        Eres mucho más que una princesa.<br>
+        Eres la reina de mi vida.<br>
+        Gracias por elegirnos. Por ser tú.<br>
+        Feliz cumpleaños, mi amorcito.<br>
+        Te amamos más que a todos los cuentos juntos.</p>
+        <div class="signature">— Tu Amorcito y tu Princesa</div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Música de fondo -->
+  <audio id="bg-music" src="music/cuento.mp3" loop></audio>
+
+  <script>
+    function startStory() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('story').style.display = 'block';
+      document.getElementById('bg-music').play();
+    }
+  </script>
+
 </body>
 </html>
+
